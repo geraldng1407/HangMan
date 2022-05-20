@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: beige;
+  color: black;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+h1 {
+  margin: 20px 0 0;
+}
+
+.game-container {
+  padding: 20px 30px;
+  position: relative;
+  margin: auto;
+  height: 250px;
+  width: 450px;
+}
+
+.figure-container {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
+
+.figure-part {
+  display: none;
+}
+
+.wrong-letters-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+/* 
+.wrong-letters-container p {
+  background-color: aqua;
+} */
+
+/* .wrong-letters-container span {
+  font-size: 50px;
+} */
+
+/* dk what is this about */
+.word {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* dk what does this do  */
+.letter {
+  border-bottom: 3px solid #2980b9;
+  display: inline-flex;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 20px;
+}
+
+.popup-container {
+  position: fixed;
+  top: 300px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* display: none; */
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  background-color: #2980b9;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.popup button {
+  cursor: pointer;
+  background-color: white;
+  color: #2980b9;
+  border: 0;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  transition: all 0.5s;
+}
+
+.popup button:hover {
+  background-color: #afbac0;
+}
+
+.popup button:active {
+  transform: scale(0.98);
+}
+
+.popup button:focus {
+  outline: 0;
+}
+
+.notification-container{
+    background-color: rgba(0,0,0,0.3);
+    border-radius
+}
