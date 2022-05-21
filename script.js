@@ -20,19 +20,26 @@ const wrongLetters = [];
 // not sure what the map() does
 function displayWord() {
     wordE1.innerHTML = `
-  ${selectedWord
-      .split("")
-      .map(
-          (letter) => `<span class="letter">${
-              correctLetters.includes(letter) ? letter : ""
-          }
+    ${selectedWord
+        .split("")
+        .map(
+            (letter) => `<span class="letter">${
+                correctLetters.includes(letter) ? letter : ""
+            }
   </span>`
-      )
-      .join("")}
+        )
+        .join("")}
   `;
+    //replace nextline characters with empty string
+    const innerWord = wordE1.innerText.replace(/\n/g, "");
+
+    if (innerWord === selectedWord) {
+        finalMessage.innerText = "Congratuations! You won!";
+        popup.style.display = "flex";
+    }
 }
 
-function updateWrongLettersE1() {
+function updateWrongLetterE1() {
     //Display wrong letters
     wrongLettersE1.innerHTML = `
     ${wrongLetters.length > 0 ? `<p>Wrong</p>` : ""}
@@ -75,7 +82,7 @@ function showNotification() {
 //regardless of whether they produce a character value.
 window.addEventListener("keydown", (e) => {
     //check if letter input (e) is an alphabet
-    if (e.code >= 65 && e.code <= 90) {
+    if (e.keyCode >= 65 && e.keyCode <= 90) {
         const letter = e.key;
 
         if (selectedWord.includes(letter)) {
@@ -95,7 +102,7 @@ window.addEventListener("keydown", (e) => {
             if (!wrongLetters.includes(letter)) {
                 wrongLetters.push(letter);
 
-                updateWrongLettersE1();
+                updateWrongLetterE1();
             } else {
                 showNotification();
             }
@@ -113,7 +120,7 @@ playAgainBtn.addEventListener("click", () => {
 
     displayWord();
 
-    updateWrongLettersE1();
+    updateWrongLetterE1();
 
     popup.style.display = "none";
 });
