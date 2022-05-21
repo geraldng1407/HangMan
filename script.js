@@ -9,9 +9,11 @@ const finalMessage = document.getElementById("final-message");
 const figureParts = document.querySelectorAll(".figure-part");
 
 // database of possible words
-const words = ["application", "programming", "interface", "wizard"];
+// const words = ["application", "programming", "interface", "wizard"];
 
-//seelct word for a particular run
+//read from text file
+
+//select word for a particular run
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 const correctLetters = [];
