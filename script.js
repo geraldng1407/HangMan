@@ -12,6 +12,9 @@ const figureParts = document.querySelectorAll(".figure-part");
 // const words = ["application", "programming", "interface", "wizard"];
 
 //read from text file
+var file = new FileReader();
+file.onload
+file.readAsText(this.)
 
 //select word for a particular run
 let selectedWord = words[Math.floor(Math.random() * words.length)];
