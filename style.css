@@ -45,12 +45,20 @@ h1 {
     display: flex;
     flex-direction: column;
     text-align: right;
+    border: 2px solid black;
+    border-style: groove;
+    border-radius: 10px;
+    padding: 20px 20px;
 }
 
 .wrong-letters-container p {
     /* background-color: aqua; */
     /* font-size: 24px; */
     margin: 0 0 5px;
+    display: flex;
+    justify-content: left;
+    font-weight: bolder;
+    text-decoration: underline;
 }
 
 .wrong-letters-container span {
