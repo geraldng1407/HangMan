@@ -11,7 +11,7 @@ const figureParts = document.querySelectorAll(".figure-part");
 // database of possible words
 const words = ["application", "programming", "interface", "wizard"];
 
-//seelct word for a particular run
+//select word for a particular run
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 const correctLetters = [];
@@ -42,7 +42,6 @@ function displayWord() {
 function updateWrongLetterE1() {
     //Display wrong letters
     wrongLettersE1.innerHTML = `
-    ${wrongLetters.length > 0 ? `<p>Wrong</p>` : ""}
     ${wrongLetters.map((letter) => `<span>${letter}</span>`)}
     `;
 
