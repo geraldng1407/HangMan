@@ -81,9 +81,15 @@ function showNotification() {
 //regardless of whether they produce a character value.
 window.addEventListener("keydown", (e) => {
     //check if letter input (e) is an alphabet
-    if (e.keyCode >= 65 && e.keyCode <= 90) {
-        const letter = e.key;
-
+    // console.log(typeof e.code);
+    e = e.key.slice(-1);
+    console.log(e.charCodeAt(0));
+    if (
+        (e.charCodeAt(0) >= 65 && e.charCodeAt(0) <= 90) ||
+        (e.charCodeAt(0) >= 97 && e.charCodeAt(0) <= 122)
+    ) {
+        //default to small caps
+        var letter = e.toLowerCase();
         if (selectedWord.includes(letter)) {
             //if input letter is inside hidden word
             if (!correctLetters.includes(letter)) {
