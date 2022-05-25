@@ -12,35 +12,26 @@ const figureParts = document.querySelectorAll(".figure-part");
 // const words = ["application", "programming", "interface", "wizard"];
 
 //read from text file
-import { readFileSync, promises as fsPromises } from "fs";
-
-async function asyncReadFile(filename) {
-    try {
-        const contents = await fsPromises.readFile(filename, "utf-8");
-        // console.log("hi");
-        const arr = contents.split(/\r?\n/);
-
-        // console.log(arr);
-        // for (var i = 0; i < arr.length; i++) {
-        //     console.log(arr[i]);
-        // }
-        document.getElementById("arrPrint").innerHTML = JSON.stringify(
-            arr,
-            null,
-            2
-        );
-
-        return arr;
-    } catch (err) {
-        console.log(err);
-    }
+// import * as fs from "fs";
+function importFile(fileName) {
+    var array;
+    fetch(fileName)
+        .then((response) => response.text())
+        .then((data) => {
+            // Do something with your data
+            // console.log(data);
+            // console.log(typeof data);
+            array = data.split(/[\s,]+/);
+            console.log(array.length);
+            return array;
+        });
+    return array;
 }
+const words = importFile("words.txt");
 
-const words = asyncReadFile("words.txt");
+// console.log(typeof words);
+// console.log(words.length);
 
-for (var i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
-}
 //select word for a particular run
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
